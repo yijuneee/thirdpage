@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ANCORE PAGE</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   <link rel="stylesheet" href="assets/css/main.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <style>
+      /* Header */
+      #header {
+          text-align: center;
+          padding: 3em 0 0 0;
+          background-color: #000; 
+          background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
+          background-position: top left, top left, top left;
+          background-size: 100% 6em, 100% 6em, auto;
+          background-repeat: no-repeat, no-repeat, repeat;
+      }
+
+      #header h1 {
+          padding: 0 0 1em 0;
+          margin: 0;
+      }
+
+      #header h1 a {
+          font-size: 2em;
+          letter-spacing: -0.025em;
+          color: #fff; 
+          border: 0;
+      }
+
+      #nav {
+          cursor: default;
+          background-color: #000; 
+          background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          padding: 0;
+      }
+
+      #nav:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 0.30em;
+          background-color: #ffadf3;
+      }
+
+      #nav > ul {
+          margin: 0;
+      }
+
+      #nav > ul > li {
+          position: relative;
+          display: inline-block;
+          margin-left: 1em;
+      }
+
+      #nav > ul > li a {
+          color: #fff;
+          text-decoration: none;
+          border: 0;
+          display: block;
+          padding: 1.5em 0.5em 1.35em 0.5em;
+      }
+
+      #nav > ul > li:first-child {
+          margin-right: 0em;
+      }
+
+      #nav > ul > li:hover a {
+          color: #fff;
+      }
+
+      #nav > ul > li.current {
+          font-weight: 600;
+      }
+
+      .menu-toggle {
+         display: flex;
+         flex-direction: column-reverse;
+         justify-content: center;
+         align-items: center;
+         width: 40px;
+         height: 40px;
+         background-color: transparent;
+         border: none;
+         cursor: pointer;
+         margin-top: -5em;
+      }
+
+      .menu-toggle .bar {
+         width: 30px;
+         height: 3px;
+         background-color: #ffadf3;
+         margin: 3px 0;
+         margin-left: 3em;
+      }
+
+      .search-box {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         margin-left: auto;
+      }
+
+      .search-box input[type="text"] {
+         width: 200px;
+         padding: 6px;
+         border: none;
+         border-bottom: 1px solid #fff;
+         background-color: transparent;
+         color: #fff;
+         font-size: 16px;
+         margin-right: 10px;
+      }
+
+      .search-box input[type="text"]::placeholder {
+         color: #fff;
+         opacity: 0.5;
+      }
+
+      .search-btn {
+         background-color: transparent;
+         border: none;
+         color: #fff;
+         font-size: 20px;
+         cursor: pointer;
+      }
+
+      #nav ul {
+         display: flex;
+         align-items: center;
+         margin-left: auto;
+      }
+
+      #nav .login-btn,
+      #nav .signup-btn {
+         margin-left: 10px;
+         color: #fff;
+         background-color: transparent;
+         border: none;
+         display: flex;
+         align-items: center;
+      }
+
+      #nav .login-btn i {
+         margin-right: 5px;
+      }
+   </style>
+</head>
+<body class="is-preload">
+   <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header">
+         <!-- Logo -->
+         <h1><a href="index.html" id="logo">ANCORE PAGE</a></h1>
+         <!-- Nav -->
+         <nav id="nav">
+            <button class="menu-toggle" onclick="toggleMenu()">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </button>
+            <ul>
+               <li><a href="concert.html">공연</a></li>
+               <li><a href="reservation.html"><strong><u>예매처</u></strong></a></li>
+               <li><a href="event.html">이벤트</a></li>
+               <li><a href="community.html">커뮤니티</a></li>
+               <li><a href="calendar.html">캘린더</a></li>
+               <li><a href="rank.html">순위</a></li>
+               <li><a href="concerthall.html">공연장</a></li>
+            </ul>
+            <div class="search-box">
+               <input type="text" placeholder="검색" />
+               <button class="search-btn"><i class="fas fa-search"></i></button>
+               <button class="login-btn"><i class="fas fa-user"></i>로그인</button>
+               <button class="signup-btn">회원가입</button>
+            </div>
+         </nav>
+      </div>
+      <script>
+         function toggleMenu() {
+            document.getElementById("nav").classList.toggle("show");
+         }
+      </script>
+   </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .image-grid a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid gray;
+      border-radius: 5px;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .image-grid img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-grid">
+    <a href="https://ticket.melon.com/main/index.htm"><img src="이미지1.jpg" alt="이미지1"></a>
+    <a href="http://ticket.yes24.com/?NaPm=ct%3Dliy3aysi%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D599aec025742989a5e2115421217965f3e731f07"><img src="이미지2.jpg" alt="이미지2"></a>
+    <a href="http://ticket.interpark.com/"><img src="이미지3.jpg" alt="이미지3"></a>
+    <a href="https://www.ticketlink.co.kr/home"><img src="이미지4.jpg" alt="이미지4"></a>
+    <a href="https://ticket.11st.co.kr/"><img src="이미지5.jpg" alt="이미지5"></a>
+    <a href="https://ticket.wemakeprice.com/"><img src="이미지6.jpg" alt="이미지6"></a>
+  </div>
+</body>
+</html>
